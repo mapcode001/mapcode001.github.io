@@ -151,7 +151,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-link"></i>
                     </div>
-                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-list-item-content">小项目链接</div>
                     <div class="mdui-collapse-item-arrow">
                         <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
                     </div>
@@ -331,6 +331,72 @@
 <li><p>在新创建的文章中使用markdown语法写文章<br> 创建的文章在<code>source/_posts文件</code>下</p>
 </li>
 </ol>
+<h2 id="六、网站设置"><a href="#六、网站设置" class="headerlink" title="六、网站设置"></a>六、网站设置</h2><h3 id="1-设置网站图标"><a href="#1-设置网站图标" class="headerlink" title="1. 设置网站图标"></a>1. 设置网站图标</h3><ol>
+<li><p>将网站图标放到指定文件夹中</p>
+<p> 将<code>favicon.ico</code>图标放到 <code>blog\themes\Meadow\source\images文件</code>中</p>
+</li>
+<li><p>引用网站图标</p>
+<p> 在主题的 <code>_config.yml配置文件</code> 中添加如下代码：</p>
+ <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span> <span class="string">/images/favicon.ico</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h3 id="2-标签"><a href="#2-标签" class="headerlink" title="2. 标签"></a>2. 标签</h3><p><span style="color: red;">添加一个包含站点内所有标签的标签页</span></p>
+<p><strong>(1) 创建标签页</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>(2) 编辑标签页</strong></p>
+<p>将<code>根目录\source\tags\index.md</code>中的type类型的值设为tag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 所有标签</span><br><span class="line">date: 2020-02-02 20:00:02</span><br><span class="line">type: &quot;tags&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>(3) 在主题的<code>_config.yml</code>文件中加入标签页</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">  tags: &#x2F;tags&#x2F; || bookmark</span><br></pre></td></tr></table></figure>
+
+<p><strong>(4) 在博客文中的头部添加标签</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 使用hexo搭建博客</span><br><span class="line">date: 2020-05-11 16:21:11</span><br><span class="line">tags: [hexo, html]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p><span style="color: red;">注意：</span>一篇文章可以有多个标签，标签之间是平级的</p>
+<p><strong>效果如下图：</strong></p>
+<p><img src="http://qa5b5mvkb.bkt.clouddn.com/2020-05-1-%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%A0%87%E7%AD%BE.png" alt="image-20200511175602855"></p>
+<h3 id="3-分类"><a href="#3-分类" class="headerlink" title="3. 分类"></a>3. 分类</h3><p><span style="color: red;">添加一个包含站点内所有分类的分类页</span></p>
+<p><strong>(1) 创建分类页</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>(2) 编辑分类页</strong></p>
+<p>将<code>根目录\source\categories\index.md</code>中的type类型的值设为categories</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 所有分类</span><br><span class="line">date: 2020-02-02 20:00:02</span><br><span class="line">type: &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>(3) 在主题的<code>_config.yml</code>文件中加入分类页</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">  categories: &#x2F;categories&#x2F; || folder</span><br></pre></td></tr></table></figure>
+
+<p><strong>(4) 在博客文中的头部添加分类</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 使用hexo搭建博客</span><br><span class="line">date: 2020-05-11 16:21:11</span><br><span class="line">categories: [技术, 博客]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p><span style="color: red;">注意：</span>分类是有等级的，分类名称越靠前级别越高，前面的分类包含后面的分类</p>
+<p><strong>效果如下图：</strong></p>
+<p><img src="http://qa5b5mvkb.bkt.clouddn.com/2020-05-1-%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E5%88%86%E7%B1%BB.png" alt="image-20200511175711183"></p>
+<h3 id="4-解决分类数量不正确"><a href="#4-解决分类数量不正确" class="headerlink" title="4. 解决分类数量不正确"></a>4. 解决分类数量不正确</h3><p>修改<code>categories.ejs文件</code></p>
+<p>路径如下：<code>blog\themes\Meadow\layout\_partial\page\categories.ejs</code></p>
+<p><img src="http://qa5b5mvkb.bkt.clouddn.com/2020-05-1-%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%A0%87%E7%AD%BE%E5%92%8C%E5%88%86%E7%B1%BB%E6%95%B0%E9%87%8F.png" alt="image-20200511072919706"></p>
+<h3 id="5-解决阅读更多的位置问题"><a href="#5-解决阅读更多的位置问题" class="headerlink" title="5. 解决阅读更多的位置问题"></a>5. 解决<code>阅读更多</code>的位置问题</h3><p><img src="http://qa5b5mvkb.bkt.clouddn.com/2020-05-1-%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A%E4%BD%8D%E7%BD%AE%E9%94%99%E8%AF%AF.png" alt="image-20200511072919706"></p>
+<p>解决方法：</p>
+<p>在文中的想要隐藏以下内容的地方添加<code>&lt;!--more--&gt;</code></p>
+<p><img src="http://qa5b5mvkb.bkt.clouddn.com/2020-05-1-%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A.png" alt="image-20200511180250845"></p>
+<p>添加后效果如下：</p>
+<p><img src="http://qa5b5mvkb.bkt.clouddn.com/2020-05-1-%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A%E6%AD%A3%E7%A1%AE%E4%BD%8D%E7%BD%AE.png" alt="image-20200511180150021"></p>
+<h3 id="6-友情链接"><a href="#6-友情链接" class="headerlink" title="6. 友情链接"></a>6. 友情链接</h3><p>在主题的配置文件中添加链接</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#友情链接</span><br><span class="line">links:</span><br><span class="line">  项目<span class="number">1</span>：俄罗斯方块: https:<span class="comment">//mapcode001.github.io/eluosi/</span></span><br><span class="line">  项目<span class="number">2</span>：待办事项: https:<span class="comment">//mapcode001.github.io/todalist/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-搜索"><a href="#7-搜索" class="headerlink" title="7. 搜索"></a>7. 搜索</h3><p><strong>(1) 在根目录下安装插件hexo-generator-searchdb</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p><strong>(2) 修改站点配置文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># search</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+
+<p><strong>(3) 修改主题配置文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 搜索</span><br><span class="line">search:</span><br><span class="line">  local: true</span><br><span class="line">  path: &#x2F;search.xml</span><br><span class="line">  placeholder: 请输入关键字</span><br></pre></td></tr></table></figure>
 
   </div>
   <!--文末结束语-->
@@ -360,10 +426,39 @@
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
         <a href="/2020/05/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" id="toc-header" class="mdui-ripple">文章目录</a>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、初始化博客"><span class="toc-number">1.</span> <span class="toc-text">一、初始化博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、项目结构介绍"><span class="toc-number">2.</span> <span class="toc-text">二、项目结构介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、更换博客主题"><span class="toc-number">3.</span> <span class="toc-text">三、更换博客主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、将博客部署到github上面"><span class="toc-number">4.</span> <span class="toc-text">四、将博客部署到github上面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、写博客"><span class="toc-number">5.</span> <span class="toc-text">五、写博客</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、初始化博客"><span class="toc-number">1.</span> <span class="toc-text">一、初始化博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、项目结构介绍"><span class="toc-number">2.</span> <span class="toc-text">二、项目结构介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、更换博客主题"><span class="toc-number">3.</span> <span class="toc-text">三、更换博客主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、将博客部署到github上面"><span class="toc-number">4.</span> <span class="toc-text">四、将博客部署到github上面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、写博客"><span class="toc-number">5.</span> <span class="toc-text">五、写博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、网站设置"><span class="toc-number">6.</span> <span class="toc-text">六、网站设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-设置网站图标"><span class="toc-number">6.1.</span> <span class="toc-text">1. 设置网站图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-标签"><span class="toc-number">6.2.</span> <span class="toc-text">2. 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-分类"><span class="toc-number">6.3.</span> <span class="toc-text">3. 分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-解决分类数量不正确"><span class="toc-number">6.4.</span> <span class="toc-text">4. 解决分类数量不正确</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-解决阅读更多的位置问题"><span class="toc-number">6.5.</span> <span class="toc-text">5. 解决阅读更多的位置问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-友情链接"><span class="toc-number">6.6.</span> <span class="toc-text">6. 友情链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-搜索"><span class="toc-number">6.7.</span> <span class="toc-text">7. 搜索</span></a></li></ol></li></ol>
       </li>
     </ul>
   </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="MTAyMC81MDA3Ny8yNjU2OA==">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+
 
 
 
