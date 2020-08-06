@@ -42,62 +42,6 @@
 
 
 
-    
-        <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        
-            load: ['[tex]/mhchem'],
-        
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        
-            packages: {'[+]': ['mhchem']},
-        
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
           
 
 
@@ -235,172 +179,40 @@
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
     
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2020/06/11/03.%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">盒子垂直居中的方法</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2020-06-11
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-08-06
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/Web/">Web</a>
-    </span>
-    
-  </div>
-</div>   
-    
 
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/CSS/ >CSS</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <p><strong>实现垂直水平居中的四种方式：</strong></p>
-<ol>
-<li>已知盒子宽高，定位+外边距</li>
-<li>未知盒子宽度，定位+外边距</li>
-<li>未知盒子宽高，定位+移动</li>
-<li>未知盒子宽高，使用flex布局</li>
-</ol>
-          
-          </div>
+<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
+    <div class="page-describe">
+        目前共计 3 篇日志。
+    </div>
+    <div class="posts-collapse">
         
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2020/06/11/03.%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">阅读更多</a>
-        </div>
-      </div>
-    </article>
+            
+            
+                <div class="collection-title">
+                    <a href="/archives/2020"><h2>2020<small>归档</small></h2></a>
+                </div>
+                
+            
 
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2020/05/11/01.HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/">HTTP请求方式</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2020-05-11
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-08-06
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/Web/">Web</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/HTTP/ >HTTP</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <p><strong>常用的请求方式</strong></p>
-<ul>
-<li>GET（查询）：  取出服务器资源（一项或多项）</li>
-<li>POST（增加）： 新建服务器资源</li>
-<li>PUT（修改）：更新服务器资源（客户端提供改变后的完整资源）  修改  PATCH  </li>
-<li>PATCH（修改）：更新服务器资源（客户端提供改变的属性）</li>
-<li>DELETE（删除）：删除服务器资源</li>
-</ul>
-          
-          </div>
+            <div class="collection-item">
+                <h3><a href="/2020/05/11/01.HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/">HTTP请求方式</a></h3>
+                <time itemprop="dateCreated" datetime=2020-05-11 >
+                    2020.05.11
+                </time>
+            </div>
         
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2020/05/11/01.HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/">阅读更多</a>
-        </div>
-      </div>
-    </article>
+            
+            
 
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">HTTP状态码</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2020-05-11
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-08-06
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/Web/">Web</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/HTTP/ >HTTP</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <p><strong>常用状态码</strong></p>
-<ul>
-<li>200：请求成功</li>
-<li>400：请求失败，客户端错误</li>
-<li>404：文件没有找到</li>
-<li>500：请求失败，服务器错误</li>
-</ul>
-          
-          </div>
+            <div class="collection-item">
+                <h3><a href="/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">HTTP状态码</a></h3>
+                <time itemprop="dateCreated" datetime=2020-05-11 >
+                    2020.05.11
+                </time>
+            </div>
         
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">阅读更多</a>
-        </div>
-      </div>
-    </article>
-
+    </div>
+</div>
 
 
   </main>

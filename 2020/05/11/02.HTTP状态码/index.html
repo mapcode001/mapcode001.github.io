@@ -42,70 +42,14 @@
 
 
 
-    
-        <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        
-            load: ['[tex]/mhchem'],
-        
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        
-            packages: {'[+]': ['mhchem']},
-        
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
           
 
 
     
     
     <title>
-          
-            博客
+        
+            HTTP状态码 | 博客
         
     </title>
     
@@ -234,122 +178,11 @@
 </aside>
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
     
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2020/06/11/03.%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">盒子垂直居中的方法</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2020-06-11
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-08-06
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/Web/">Web</a>
-    </span>
     
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/CSS/ >CSS</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <p><strong>实现垂直水平居中的四种方式：</strong></p>
-<ol>
-<li>已知盒子宽高，定位+外边距</li>
-<li>未知盒子宽度，定位+外边距</li>
-<li>未知盒子宽高，定位+移动</li>
-<li>未知盒子宽高，使用flex布局</li>
-</ol>
-          
-          </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2020/06/11/03.%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">阅读更多</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/2020/05/11/01.HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/">HTTP请求方式</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2020-05-11
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2020-08-06
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/Web/">Web</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/HTTP/ >HTTP</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <p><strong>常用的请求方式</strong></p>
-<ul>
-<li>GET（查询）：  取出服务器资源（一项或多项）</li>
-<li>POST（增加）： 新建服务器资源</li>
-<li>PUT（修改）：更新服务器资源（客户端提供改变后的完整资源）  修改  PATCH  </li>
-<li>PATCH（修改）：更新服务器资源（客户端提供改变的属性）</li>
-<li>DELETE（删除）：删除服务器资源</li>
-</ul>
-          
-          </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2020/05/11/01.HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/">阅读更多</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
+      <div class="post-header"> 
   <a class="post-header-title" href="/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">HTTP状态码</a>
   <div class="post-header-meta">
     <span>
@@ -365,14 +198,53 @@
       分类于:&nbsp;<a class="category-link" href="/categories/Web/">Web</a>
     </span>
     
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
   </div>
 </div>   
     
 
 
 
-      
-      
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=HTTP状态码&url=http://mapcode001.github.io/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/&pic=http://mapcode001.github.io/images/favicon.ico&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=HTTP状态码&url=http://mapcode001.github.io/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/&via=WeiQiang" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://mapcode001.github.io/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://mapcode001.github.io/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://mapcode001.github.io/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/&title=HTTP状态码" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=博客&title=HTTP状态码&summary=一分耕耘，一分收获&pics=http://mapcode001.github.io/images/favicon.ico&url=http://mapcode001.github.io/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://mapcode001.github.io/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/&text=HTTP状态码" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
   <div class="post-tags">
     
       <i class="iconfont icon-tag">
@@ -381,25 +253,108 @@
     
   </div>
 
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <p><strong>常用状态码</strong></p>
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <p><strong>常用状态码</strong></p>
 <ul>
 <li>200：请求成功</li>
 <li>400：请求失败，客户端错误</li>
 <li>404：文件没有找到</li>
 <li>500：请求失败，服务器错误</li>
 </ul>
-          
-          </div>
+<a id="more"></a>
+
+<p>1XX：信息状态码</p>
+<ul>
+<li><code>100 Continue</code> 继续，一般在发送<code>post</code>请求时，已发送了<code>http header</code>之后服务端将返回此信息，表示确认，之后发送具体参数信息</li>
+</ul>
+<p>2XX：成功状态码</p>
+<ul>
+<li><code>200 OK</code> 正常返回信息</li>
+<li><code>201 Created</code> 请求成功并且服务器创建了新的资源</li>
+<li><code>202 Accepted</code> 服务器已接受请求，但尚未处理</li>
+</ul>
+<p>3XX：重定向</p>
+<ul>
+<li><code>301 Moved Permanently</code> 请求的网页已永久移动到新位置。</li>
+<li><code>302 Found</code> 临时性重定向。</li>
+<li><code>303 See Other</code> 临时性重定向，且总是使用 <code>GET</code> 请求新的 <code>URI</code>。</li>
+<li><code>304 Not Modified</code> 自从上次请求后，请求的网页未修改过。</li>
+</ul>
+<p>4XX：客户端错误</p>
+<ul>
+<li><code>400 Bad Request</code> 服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求。</li>
+<li><code>401 Unauthorized</code> 请求未授权。</li>
+<li><code>403 Forbidden</code> 禁止访问。</li>
+<li><code>404 Not Found</code> 找不到如何与 <code>URI</code> 相匹配的资源。</li>
+</ul>
+<p>5XX:：服务器错误</p>
+<ul>
+<li><code>500 Internal Server Error</code> 最常见的服务器端错误。</li>
+<li><code>503 Service Unavailable</code> 服务器端暂时无法处理请求（可能是过载或维护）。</li>
+</ul>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> 本文结束 <i class="iconfont icon-heartbeat" style="color:red; font-size:24px;"></i> 谢谢观看 </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/05/11/01.HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>HTTP请求方式</span>
+      </a>
+    
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" id="toc-header" class="mdui-ripple">文章目录</a>
         
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">阅读更多</a>
-        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">livere</a>
+        
       </div>
-    </article>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="MTAyMC81MDA3Ny8yNjU2OA==">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+
 
 
 
@@ -449,6 +404,12 @@
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
 
 
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HTTP请求方式和状态码</title>
-    <url>/2020/08/02/HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%92%8C%E7%8A%B6%E6%80%81%E7%A0%81/</url>
-    <content><![CDATA[<h2 id="HTTP请求方式"><a href="#HTTP请求方式" class="headerlink" title="HTTP请求方式"></a>HTTP请求方式</h2><p><strong>常用的请求方式</strong></p>
+    <title>HTTP请求方式</title>
+    <url>/2020/05/11/01.HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<p><strong>常用的请求方式</strong></p>
 <ul>
 <li>GET（查询）：  取出服务器资源（一项或多项）</li>
 <li>POST（增加）： 新建服务器资源</li>
@@ -29,13 +29,26 @@
 <p>  <span style="color: red; ">获取当前URL所支持的方法。</span>若请求成功，则它会在HTTP头中包含一个名为“Allow”的头，值是所支持的方法，如“GET, POST”。</p>
 </li>
 </ul>
-<h2 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h2><p><strong>常用状态码</strong></p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTTP状态码</title>
+    <url>/2020/05/11/02.HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</url>
+    <content><![CDATA[<p><strong>常用状态码</strong></p>
 <ul>
 <li>200：请求成功</li>
 <li>400：请求失败，客户端错误</li>
 <li>404：文件没有找到</li>
 <li>500：请求失败，服务器错误</li>
 </ul>
+<a id="more"></a>
+
 <p>1XX：信息状态码</p>
 <ul>
 <li><code>100 Continue</code> 继续，一般在发送<code>post</code>请求时，已发送了<code>http header</code>之后服务端将返回此信息，表示确认，之后发送具体参数信息</li>
@@ -66,10 +79,16 @@
 <li><code>503 Service Unavailable</code> 服务器端暂时无法处理请求（可能是过载或维护）。</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+      </tags>
   </entry>
   <entry>
-    <title>垂直水平居中的方法</title>
-    <url>/2020/08/06/%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <title>盒子垂直居中的方法</title>
+    <url>/2020/06/11/03.%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p><strong>实现垂直水平居中的四种方式：</strong></p>
 <ol>
 <li>已知盒子宽高，定位+外边距</li>
@@ -77,10 +96,10 @@
 <li>未知盒子宽高，定位+移动</li>
 <li>未知盒子宽高，使用flex布局</li>
 </ol>
+<a id="more"></a>
+
 <p><strong>结构代码：</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"father_box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"son_box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
 
 <h3 id="方法一：已知盒子宽高，定位-外边距"><a href="#方法一：已知盒子宽高，定位-外边距" class="headerlink" title="方法一：已知盒子宽高，定位+外边距"></a>方法一：已知盒子宽高，定位+外边距</h3><blockquote>
 <p>父盒子设置为相对定位；</p>
@@ -111,5 +130,11 @@
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.father_box</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="comment">/* 在主轴方向居中 */</span></span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="comment">/* 在交叉轴居中 */</span></span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.son_box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: seagreen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
   </entry>
 </search>
