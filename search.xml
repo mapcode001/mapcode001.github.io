@@ -148,6 +148,8 @@
 <li><code>align-items 属性</code>：项目在侧轴上的排列方式（单行）</li>
 <li><code>align-content 属性</code>：项目在侧轴上的排列方式（多行）</li>
 </ul>
+<a id="more"></a>
+
 <h3 id="1-flex-direction属性：主轴方向"><a href="#1-flex-direction属性：主轴方向" class="headerlink" title="1. flex-direction属性：主轴方向"></a>1. flex-direction属性：主轴方向</h3><blockquote>
 <p><code>flex-direction</code>属性决定：主轴的方向（即项目的排列方向）</p>
 </blockquote>
