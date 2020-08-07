@@ -176,7 +176,7 @@
 <li><code>wrap</code>：换行，第一行在上方。</li>
 <li><code>wrap-reverse</code>：换行，第一行在下方。</li>
 </ul>
-<h3 id="3-flex-flow属性：简写"><a href="#3-flex-flow属性：简写" class="headerlink" title="3. flex-flow属性：简写"></a>3. flex-flow属性：简写</h3><blockquote>
+<h3 id="3-flex-flow属性：flex-direction和flex-wrap的简写"><a href="#3-flex-flow属性：flex-direction和flex-wrap的简写" class="headerlink" title="3. flex-flow属性：flex-direction和flex-wrap的简写"></a>3. flex-flow属性：flex-direction和flex-wrap的简写</h3><blockquote>
 <p><code>flex-flow</code>属性是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为<code>row nowrap</code>。</p>
 </blockquote>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
