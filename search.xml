@@ -163,8 +163,8 @@
 <li><code>column</code>：主轴为垂直方向，起点在上沿。</li>
 <li><code>column-reverse</code>：主轴为垂直方向，起点在下沿。</li>
 </ul>
-<h3 id="2-flex-flow属性：是否换行"><a href="#2-flex-flow属性：是否换行" class="headerlink" title="2. flex-flow属性：是否换行"></a>2. flex-flow属性：是否换行</h3><blockquote>
-<p><code>flex-flow</code>属性决定：是否换行</p>
+<h3 id="2-flex-wrap属性：是否换行"><a href="#2-flex-wrap属性：是否换行" class="headerlink" title="2. flex-wrap属性：是否换行"></a>2. flex-wrap属性：是否换行</h3><blockquote>
+<p><code>flex-wrap</code>属性决定：是否换行</p>
 <p>默认情况下，项目都排在一条线（又称”轴线”）上。<code>flex-wrap</code>属性定义，如果一条轴线排不下，如何换行</p>
 </blockquote>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
